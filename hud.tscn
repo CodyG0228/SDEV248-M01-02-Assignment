@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dfooto81fwkff"]
+
+[ext_resource type="Script" uid="uid://erx6tpq2m45u" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="FontVariation" id="FontVariation_07tex"]
+
+[sub_resource type="FontVariation" id="FontVariation_q00p7"]
+base_font = SubResource("FontVariation_07tex")
+
+[sub_resource type="LabelSettings" id="LabelSettings_q00p7"]
+font = SubResource("FontVariation_q00p7")
+
+[sub_resource type="FontVariation" id="FontVariation_37p78"]
+
+[sub_resource type="FontVariation" id="FontVariation_n2snw"]
+base_font = SubResource("FontVariation_37p78")
+
+[sub_resource type="LabelSettings" id="LabelSettings_12myl"]
+font = SubResource("FontVariation_n2snw")
+
+[node name="HUD" type="CanvasLayer" unique_id=1802944436]
+script = ExtResource("1_37p78")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=787476275]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+text = "Coke Zeroes: 0"
+label_settings = SubResource("LabelSettings_q00p7")
+
+[node name="LivesLabel" type="Label" parent="." unique_id=1951813924]
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 10.0
+offset_bottom = 40.0
+text = "Lives: 3"
+label_settings = SubResource("LabelSettings_12myl")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dvhn1bqn3hp13"]
+
+[ext_resource type="Script" uid="uid://b800jmwjvqo1o" path="res://pickup.gd" id="1_pickup_script"]
+[ext_resource type="Texture2D" uid="uid://dxm8ogxmwpo7o" path="res://assets/coke-zero.svg" id="2_weqpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amdaw"]
+size = Vector2(36, 103)
+
+[node name="Pickup" type="Area2D" unique_id=1910972756 groups=["pickup"]]
+script = ExtResource("1_pickup_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1]
+position = Vector2(-2, 3.5)
+shape = SubResource("RectangleShape2D_amdaw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2]
+position = Vector2(-1.9999981, 3.9999924)
+scale = Vector2(0.18406592, 0.18823361)
+texture = ExtResource("2_weqpt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

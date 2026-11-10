@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://tfl68uv3f0a5"]
+
+[ext_resource type="Texture2D" uid="uid://bs46paygyfjq4" path="res://background/iiidle_building1.svg" id="1_ydort"]
+[ext_resource type="Texture2D" uid="uid://5nwtyal3nh16" path="res://background/iiidle_door.svg" id="2_if3o6"]
+[ext_resource type="Texture2D" uid="uid://djthtiw0uulgd" path="res://background/iiidle_sidewalk.svg" id="3_m5q4o"]
+[ext_resource type="PackedScene" uid="uid://d30ebo7uakvax" path="res://dude.tscn" id="4_iefvx"]
+[ext_resource type="Script" uid="uid://2ig72qbxqe41" path="res://dude.gd" id="5_c4o0f"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_if3o6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iefvx"]
+size = Vector2(4800, 49)
+
+[node name="Lv1" type="Node2D" unique_id=170896923]
+
+[node name="Objects" type="Node2D" parent="." unique_id=440459965]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects" unique_id=462333901]
+
+[node name="IiidleBuilding1" type="Sprite2D" parent="Objects" unique_id=1567457217]
+position = Vector2(201, 204)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ydort")
+
+[node name="IiidleDoor" type="Sprite2D" parent="Objects" unique_id=237405628]
+position = Vector2(203, 323)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_if3o6")
+
+[node name="IiidleSidewalk" type="Sprite2D" parent="Objects" unique_id=39936]
+position = Vector2(263, 434)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_m5q4o")
+
+[node name="IiidleSidewalk2" type="Sprite2D" parent="Objects" unique_id=292406244]
+position = Vector2(481, 434)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_m5q4o")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1127539885]
+physics_material_override = SubResource("PhysicsMaterial_if3o6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=183051609]
+position = Vector2(2558, 455)
+shape = SubResource("RectangleShape2D_iefvx")
+
+[node name="Dude" parent="." unique_id=1898904185 instance=ExtResource("4_iefvx")]
+position = Vector2(210, 376)
+scale = Vector2(0.26, 0.26)
+script = ExtResource("5_c4o0f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dude" unique_id=563563184]
+root_node = NodePath("../..")
+
+[node name="Camera2D" type="Camera2D" parent="Dude" unique_id=1584691472]
+limit_left = 0
+limit_bottom = 648
